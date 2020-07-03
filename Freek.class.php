@@ -2,6 +2,10 @@
 require_once 'Dier.class.php';
 require_once 'Vis.class.php';
 require_once 'Vogel.class.php';
+require_once 'Kraai.class.php';
+require_once 'Struisvogel.class.php';
+require_once 'Vliegbrevet.class.php';
+
 class Freek
 {
     public function geefEten($dier)
@@ -18,16 +22,16 @@ class Freek
     {
         $dier->speak();
     }
+    public function laatVliegen(Vliegbrevet $dier)
+    {
+        $dier->fly();
+    }
 }
 
-$vis = new Vis();
-$vogel = new Vogel();
 $freek = new Freek();
+$kraai = new Kraai();
+$struisvogel = new Struisvogel();
 
-$freek->geefEten($vis);
-$freek->geefEten($vogel);
-$freek->brengNaarBed($vis);
-$freek->brengNaarBed($vogel);
-$freek->speak($vis);
-$freek->speak($vogel);
+$freek->laatVliegen($kraai);
+$freek->laatVliegen($struisvogel);
 ?>
